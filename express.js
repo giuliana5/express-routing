@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const process = require('process')
-
 const oper = require("./operations");
 
 app.use(express.json());
