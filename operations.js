@@ -1,8 +1,7 @@
 class Operations {
 
     // turn string into number array
-    constructor(numString) {
-        let numArr = numString.split(',');
+    constructor(numArr) {
         this.nums = numArr.map(Number);
     };
 
@@ -12,20 +11,20 @@ class Operations {
         return {
             operation: "mean",
             value: mean
-        }
+        };
     };
 
 
     median() {
-        const sortedNums = this.nums.sort((a, b) => a - b)
+        const sortedNums = this.nums.sort((a, b) => a - b);
         const half = Math.floor(sortedNums.length / 2);
-      
+    
         if (this.nums.length % 2) {
             return {
                 operation: "median",
                 value: this.nums[half]
             };
-        }
+        };
         
         return {
             operation: "median",
@@ -35,8 +34,7 @@ class Operations {
 
 
     mode() {
-    
-        let numObj = {}
+        let numObj = {};
       
         for (let i = 0; i < this.nums.length; i++) {
             let num = this.nums[i];
@@ -45,8 +43,8 @@ class Operations {
                 numObj[num] += 1;
             } else {
                 numObj[num] = 1
-            }
-        }
+            };
+        };
       
         let largestVal = -1;
         let largestValKey = -1;
@@ -62,11 +60,9 @@ class Operations {
         return {
             operation: "mode",
             value: largestValKey
-        }
+        };
     };
 };
 
 
-module.exports = {
-    Operations
-};
+module.exports = Operations;
